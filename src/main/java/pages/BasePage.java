@@ -12,7 +12,7 @@ public class BasePage {
         this.driver = driver;
     }
 
-    protected void openUrl(String url) {
+    protected void openUrl(String url)  {
         driver.get(url);
     }
 
@@ -30,6 +30,10 @@ public class BasePage {
 
     protected void type(String text, By locator) {
         find(locator).sendKeys(text);
+    }
+
+    protected void submit(By locator) {
+        find(locator).submit();
     }
 }
 

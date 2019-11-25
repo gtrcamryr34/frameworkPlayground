@@ -32,7 +32,7 @@ public class LoginPageObject extends BasePage {
     public void Login(String username, String password) {
         type(username, userNameElement);
         type(password, passwordElement);
-        click(loginButton);
+        submit(passwordElement);
     }
 
     public String verifyLogoutMessage() {

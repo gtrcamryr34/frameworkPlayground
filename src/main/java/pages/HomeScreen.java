@@ -14,7 +14,7 @@ public class HomeScreen extends BasePage {
     public HomeScreen(WebDriver driver) {
         super(driver);
     }
-    public void openPage() {
+    public void openPage() throws Exception {
         openUrl(pageUrl);
     }
 
