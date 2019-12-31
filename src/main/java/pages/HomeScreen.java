@@ -2,7 +2,6 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 
 public class HomeScreen extends BasePage {
 
@@ -10,6 +9,7 @@ public class HomeScreen extends BasePage {
     private String pageUrl = "http://the-internet.herokuapp.com";
 
     private By formAuthlinkLocator = By.linkText("Form Authentication");
+    private By forgotPasswordLocator = By.linkText("Forgot Password");
 
     public HomeScreen(WebDriver driver) {
         super(driver);
@@ -19,7 +19,10 @@ public class HomeScreen extends BasePage {
     }
 
     public void clickFormAuth() {
-
        click(formAuthlinkLocator);
+    }
+
+    public void clickForgotPassword() {
+        click(forgotPasswordLocator);
     }
 }

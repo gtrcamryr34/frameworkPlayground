@@ -11,6 +11,7 @@ import pages.SecureAreaPage;
 
 public class LoginTest extends TestUtilities {
 
+
     @Test
     public void Logintest() throws Exception {
         System.out.println("Starting Login Test");
