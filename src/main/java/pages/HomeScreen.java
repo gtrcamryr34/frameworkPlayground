@@ -10,9 +10,7 @@ public class HomeScreen extends BasePage {
 
     private By formAuthlinkLocator = By.linkText("Form Authentication");
     private By forgotPasswordLocator = By.linkText("Forgot Password");
-    private By checkBoxlocator = By.linkText ("Checkboxes");
-    private By checkBoxoption1 = By.xpath ("//*[@id=\"checkboxes\"]/input[1]");
-    private By checkBoxoption2 = By.xpath("//*[@id=\"checkboxes\"]/input[2]");
+
 
     public HomeScreen(WebDriver driver) {
         super(driver);
@@ -29,9 +27,5 @@ public class HomeScreen extends BasePage {
         click(forgotPasswordLocator);
     }
 
-    public void clickCheckboxes() {click(checkBoxlocator);}
 
-    public void clickoption1() {click (checkBoxoption1);}
-
-    public void clickoption2() {click ( checkBoxoption2 );}
 }
