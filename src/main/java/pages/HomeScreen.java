@@ -10,6 +10,7 @@ public class HomeScreen extends BasePage {
 
     private By formAuthlinkLocator = By.linkText("Form Authentication");
     private By forgotPasswordLocator = By.linkText("Forgot Password");
+    private By inputs = By.linkText("Inputs");
 
     public HomeScreen(WebDriver driver) {
         super(driver);
@@ -25,4 +26,7 @@ public class HomeScreen extends BasePage {
     public void clickForgotPassword() {
         click(forgotPasswordLocator);
     }
+
+    public void clickInputs() { click(inputs);}
+
 }
