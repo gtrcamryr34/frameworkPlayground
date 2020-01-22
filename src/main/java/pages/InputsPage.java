@@ -2,6 +2,7 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 
 import java.sql.Driver;
@@ -11,18 +12,30 @@ public class InputsPage extends BasePage {
 
     private static String loginUrl = "http://the-internet.herokuapp.com/inputs";
 
-    private String title = "Inputs";
-    private String expectedInputConfirmationTitle = "Inputs";
-    private String actualInputsConfirmationTitle = driver.getTitle();
-    private By actualInputConfirmation = By.xpath("//*[@id=\"content\"]/div/div/h3");
+    private static String title = "Inputs";
+    private static String expectedInputConfirmationTitle = "Number";
+    //private static String actualInputsConfirmationTitle = driver.getTitle();
+    private static By actualInputConfirmation = By.xpath("/html/body/div[2]/div/div/div/div/p");
+
+
+    private By integerTextBox = By.xpath("By.xpath(\"//*[@id=\\\"content\\\"]/div/div/div/input");
+
+
+
 
     public InputsPage(WebDriver driver) {
         super(driver);
     }
 
-    public void verifyInputsURL() {
-        Assert.assertEquals(driver.getCurrentUrl(), loginUrl);
-    }
+    public static void verifyInputsURL() { Assert.assertEquals(actualInputConfirmation, expectedInputConfirmationTitle);
+   }
+
+   public void enterIntegers(String integers) {
+        type(integers, integerTextBox);
+   }
+
+
+
 
 
     private String numberInput = "2020";
