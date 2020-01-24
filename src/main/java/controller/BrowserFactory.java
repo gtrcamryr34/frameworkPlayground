@@ -28,7 +28,7 @@ public class BrowserFactory {
 
 
         if ("chrome".equals(browser)) {
-            System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
+            System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver");
             driver.set(new ChromeDriver());
         } else if ("firefox".equals(browser)) {
             System.setProperty("webdriver.gecko.driver", "src/main/resources/geckodriver.exe");
