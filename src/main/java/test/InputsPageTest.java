@@ -25,12 +25,13 @@ public class InputsPageTest extends TestUtilities {
         homeScreen.openPage();
         homeScreen.clickInputs();
 
-         //inputsPage.verifyInputsURL();
+         inputsPage.verifyInputsURL();
 
-        //inputsPage.enterIntegers("2020");
+        inputsPage.enterIntegers("2020");
+        inputsPage.verifyEnteredInteger();
 
-       WebElement integers = driver.findElement(By.xpath("//*[@id=\"content\"]/div/div/div/input"));
-       integers.sendKeys("2020");
+       //WebElement integers = driver.findElement(By.xpath("//*[@id=\"content\"]/div/div/div/input"));
+       //integers.sendKeys("2020");
 
         ///SIDE NOTE: I have tried to make integers a method in InputPage; however it was not allowing me;
         // Hence I had to code the "integers" in the testing region.  I guess I am doing something with the framework.
