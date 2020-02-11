@@ -20,26 +20,22 @@ public class InputsPage extends BasePage {
 
     private By integerTextBox = By.xpath("By.xpath(\"//*[@id=\\\"content\\\"]/div/div/div/input");
 
-
-
-
     public InputsPage(WebDriver driver) {
+
         super(driver);
     }
 
-    public static void verifyInputsURL() { Assert.assertEquals(actualInputConfirmation, expectedInputConfirmationTitle);
+    public static void verifyInputsURL() {
+        Assert.assertEquals(actualInputConfirmation, expectedInputConfirmationTitle);
    }
 
-   public void enterIntegers(String integers) {
-        type(integers, integerTextBox);
+   public void enterIntegers(String Integers) {
+
+        type(Integers, integerTextBox);
    }
-
-
-
 
 
     private String numberInput = "2020";
-
 
 
 }
