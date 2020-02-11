@@ -21,9 +21,7 @@ public class InputsPage extends BasePage {
 
     private By integerTextBox = By.xpath("//*[@id=\"content\"]/div/div/div/input");
 
-
     public InputsPage(WebDriver driver) {
-
         super(driver);
     }
 
@@ -32,12 +30,11 @@ public class InputsPage extends BasePage {
    }
 
    public void enterIntegers(String Integers) {
-
         type(Integers, integerTextBox);
    }
 
-
     private String numberInput = "2020";
+    //This input is in TestData; hence it is not used from here
 
     public void verifyEnteredInteger() {
         Assert.assertEquals(find(integerTextBox).getAttribute("value"), TestData.Integers);
