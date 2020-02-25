@@ -8,9 +8,11 @@ public class HomeScreen extends BasePage {
     protected WebDriver driver;
     private String pageUrl = "http://the-internet.herokuapp.com";
 
-    private By formAuthlinkLocator = By.linkText("Form Authentication");
+    private By formAuthLinkLocator = By.linkText("Form Authentication");
     private By forgotPasswordLocator = By.linkText("Forgot Password");
-    private By inputs = By.linkText("Inputs");
+    private By inputsPageLocator = By.linkText("Inputs");
+    private By entryAdPageLocator = By.linkText("Entry Ad");
+    private By entryAdModalBoxCloseLocator = By.xpath("//*[@id=\"modal\"]/div[2]/div[3]/p");
 
     public HomeScreen(WebDriver driver) {
         super(driver);
@@ -20,13 +22,17 @@ public class HomeScreen extends BasePage {
     }
 
     public void clickFormAuth() {
-       click(formAuthlinkLocator);
+       click(formAuthLinkLocator);
     }
 
     public void clickForgotPassword() {
         click(forgotPasswordLocator);
     }
 
-    public void clickInputs() { click(inputs);}
+    public void clickInputs() { click(inputsPageLocator);}
+
+    public void clickEntryAd() { click(entryAdPageLocator);}
+
+    public void clickModalBoxClose() {click(entryAdModalBoxCloseLocator);}
 
 }

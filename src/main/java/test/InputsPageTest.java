@@ -1,15 +1,10 @@
 package test;
 
 import controller.TestUtilities;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.Test;
 import pages.HomeScreen;
 import pages.InputsPage;
-
-import java.sql.Driver;
 
 public class InputsPageTest extends TestUtilities {
 
@@ -20,11 +15,10 @@ public class InputsPageTest extends TestUtilities {
         HomeScreen homeScreen = new HomeScreen(driver);
         InputsPage inputsPage = new InputsPage(driver);
 
-
         homeScreen.openPage();
         homeScreen.clickInputs();
 
-         inputsPage.verifyInputsURL();
+        inputsPage.verifyInputsHeader();
 
         inputsPage.enterIntegers("2020");
         inputsPage.verifyEnteredInteger();

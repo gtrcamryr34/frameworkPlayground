@@ -3,21 +3,16 @@ package pages;
 import controller.TestData;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.testng.Assert;
-
-import java.sql.Driver;
 
 public class InputsPage extends BasePage {
 
 
     private static String loginUrl = "http://the-internet.herokuapp.com/inputs";
-
     private String title = "Inputs";
-    private String expectedInputConfirmationTitle = "Number";
+    private String expectedInputHeader = "Number";
     //private static String actualInputsConfirmationTitle = driver.getTitle();
-    private By actualInputConfirmation = By.xpath("/html/body/div[2]/div/div/div/div/p");
-
+    private By actualInputHeader = By.xpath("/html/body/div[2]/div/div/div/div/p");
 
     private By integerTextBox = By.xpath("//*[@id=\"content\"]/div/div/div/input");
 
@@ -25,8 +20,8 @@ public class InputsPage extends BasePage {
         super(driver);
     }
 
-    public void verifyInputsURL() {
-        Assert.assertEquals(find(actualInputConfirmation).getText() , expectedInputConfirmationTitle);
+    public void verifyInputsHeader() {
+        Assert.assertEquals(find(actualInputHeader).getText(), expectedInputHeader);
    }
 
    public void enterIntegers(String Integers) {
@@ -34,7 +29,7 @@ public class InputsPage extends BasePage {
    }
 
     private String numberInput = "2020";
-    //This input is in TestData; hence it is not used from here
+    //This "numberInput" is in TestData; hence it is not used from here
 
     public void verifyEnteredInteger() {
         Assert.assertEquals(find(integerTextBox).getAttribute("value"), TestData.Integers);
