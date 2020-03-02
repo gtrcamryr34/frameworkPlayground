@@ -20,7 +20,7 @@ public class RedirectLinkPage extends BasePage {
     private By contentsUnderTitleLocator = By.xpath("//*[@id=\"content\"]/div/p");
     private By hereLinkLocator = By.linkText("here");
     private By nextPageTxtLink = By.xpath("//*[@id=\"content\"]/div/p[1]/a");
-    private By nextPageTitleLocator = By.xpath("//*[@id=\"content\"]/div/h3");
+    private By actualNextPageTitle = By.xpath("//*[@id=\"content\"]/div/h3") ;
     private By nextPagetextLocator = By.xpath("//*[@id=\"content\"]/div/p[1]");
 
     public void clickRedirectLink() {
@@ -36,18 +36,18 @@ public class RedirectLinkPage extends BasePage {
     }
 
     public void verifyTitleText() {
-        Assert.assertEquals(find(this.titleLocator).getText(), title);
+        Assert.assertEquals(find(titleLocator).getText(), title);
     }
 
-    public void verifyContentsUnderTitle() {
+    public void verifyFirstParagraph() {
         Assert.assertEquals(find(contentsUnderTitleLocator).getText(), contentsUnderTitle);
     }
 
     public void verifyNextPageTitle() {
-        Assert.assertEquals(find(nextPageTitleLocator).getText(), nextPageTitle);
+        Assert.assertEquals(find ( actualNextPageTitle ) .getText (), nextPageTitle);
     }
 
-    public void verifyNextPageText() {
+    public void verifyNextPageParagraph() {
         Assert.assertEquals(find(nextPagetextLocator).getText(), nextPageContents);
     }
 

@@ -10,8 +10,10 @@ public class HomeScreen extends BasePage {
 
     private By formAuthlinkLocator = By.linkText("Form Authentication");
     private By forgotPasswordLocator = By.linkText("Forgot Password");
+    private By contextMenuLocator = By.linkText ("Context Menu");
 
     public HomeScreen(WebDriver driver) {
+
         super(driver);
     }
     public void openPage() throws Exception {
@@ -19,10 +21,17 @@ public class HomeScreen extends BasePage {
     }
 
     public void clickFormAuth() {
-       click(formAuthlinkLocator);
+
+        click(formAuthlinkLocator);
     }
 
     public void clickForgotPassword() {
+
         click(forgotPasswordLocator);
+    }
+
+    public void clickContextMenu() {
+
+        click(contextMenuLocator);
     }
 }
