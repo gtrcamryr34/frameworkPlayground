@@ -14,18 +14,13 @@ public class ContextMenuTest extends TestUtilities {
 
         HomeScreen homeScreen = new HomeScreen (driver);
         ContextMenuPage contextMenuPage = new ContextMenuPage (driver);
-        homeScreen.openPage ();
+        homeScreen.openPage();
         homeScreen.clickContextMenu ();
         contextMenuPage.verifyPageUrl ();
         contextMenuPage.verifyFirstPara ();
         contextMenuPage.verifySecondPara ();
         contextMenuPage.setContextRightClick ();
-
-
-
-
     }
-
 
     }
 

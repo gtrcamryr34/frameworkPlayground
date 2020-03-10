@@ -8,10 +8,9 @@ import org.openqa.selenium.interactions.Actions;
 public class BasePage {
 
     protected WebDriver driver;
-    Actions action = new Actions(driver);
 
     public BasePage(WebDriver driver) {
-        driver = driver;
+        this.driver = driver;
     }
 
     protected void openUrl(String url)  {
@@ -36,6 +35,12 @@ public class BasePage {
 
     protected void submit(By locator) {
         find(locator).submit();
+    }
+
+    protected void contextRClick(WebElement element) {
+        Actions action = new Actions(driver);
+        action.contextClick(element).perform();
+
     }
 
 

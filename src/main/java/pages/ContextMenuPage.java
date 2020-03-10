@@ -12,29 +12,33 @@ public class ContextMenuPage extends BasePage {
     private String expectedFirstPara = "Context menu items are custom additions that appear in the right-click menu.";
     private String expectedSecondPara = "Right-click in the box below to see one called 'the-internet'. When you click it, it will trigger a JavaScript alert.";
 
-    private By titleLocator = By.xpath ("//*[@id=\"content\"]/div/h3" );
+    private By titleLocator = By.xpath("//*[@id=\"content\"]/div/h3");
     private By firstParaLocator = By.xpath("//*[@id=\"content\"]/div/p[1]");
-    private By secondParaLocator = By.xpath ( "//*[@id=\"content\"]/div/p[2]" );
-    private By contextRightClick = By.xpath ( "//*[@id=\"hot-spot\"]" );
+    private By secondParaLocator = By.xpath("//*[@id=\"content\"]/div/p[2]");
+
+
+
     public ContextMenuPage(WebDriver driver) {
-        super ( driver );
+        super(driver);
     }
+
     public void verifyPageUrl() {
-        Assert.assertEquals(driver.getCurrentUrl (), pageUrl);
+        Assert.assertEquals(driver.getCurrentUrl(), pageUrl);
     }
 
 
-    public void verifyFirstPara(){
-        Assert.assertEquals(find ( firstParaLocator ).getText (),expectedFirstPara);
+    public void verifyFirstPara() {
+        Assert.assertEquals(find(firstParaLocator).getText(), expectedFirstPara);
     }
 
-    public void verifySecondPara(){
-        Assert.assertEquals(find ( secondParaLocator ).getText (),expectedSecondPara);
+    public void verifySecondPara() {
+        Assert.assertEquals(find(secondParaLocator).getText(), expectedSecondPara);
 
     }
 
-    public void setContextRightClick(){
-        action.contextClick ( (WebElement) contextRightClick ).perform ();
-    }
+      public void setContextRightClick(){
+          WebElement contextRightClick = driver.findElement(By.xpath("//*[@id=\"hot-spot\"]"));
+          contextRClick(contextRightClick);
+}
 
 }
